@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bg {
+            color: red;
+        }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <div class="bg" v-blid:id="bg1">
+            Hello World!!!
+            {{msg}}
+        </div>
+        <div class="bg">
+            {{msg}}
+        </div>
+        {{(count + 1) * 10 }}
+        {{ count + 1 }}
+        <div v-html="template">
+        </div>
+        <a v-bind:href="url">百度</a>
+        <a :href="url">百度</a>
+        <button type="button" v-on:click="submit()">加数字</button>
+        <button type="button" @click="submit()">加数字</button>
+    </div>  
+    <script>
+        new Vue({
+            el: '.app',
+            data: {
+                bg1:"app-blind",
+                msg: 'Hello Vue!!!',
+                count:0,
+                template:'<div >Hello template</div>',
+                url:'http://www.baidu.com'
+            },
+            methods: {
+                submit:function(){
+                    this.count ++
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
